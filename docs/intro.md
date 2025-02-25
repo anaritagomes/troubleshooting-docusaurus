@@ -1,47 +1,41 @@
 ---
-sidebar_position: 1
+id: intro
+title: Troubleshooting Guide
+sidebar_label: Troubleshooting Guide
 ---
 
-# Tutorial Intro
+## Situation
+During an **online remote inspection**, the **audio stream connection is lost** when the car engine starts due to the customer's **Bluetooth connecting to the vehicle**.
 
-Let's discover **Docusaurus in less than 5 minutes**.
+## Outcome
+- The **remote inspector cannot hear the customer**.
+- The **inspection cannot proceed**.
 
-## Getting Started
+## Expected Behavior
+- The **audio stream should remain stable** even when the car engine starts.
+- The **customer should be able to communicate without interruptions**.
 
-Get started by **creating a new site**.
+## Explanation
+- **Bluetooth auto-connects to the vehicle** when the engine starts, redirecting the phone’s microphone and speaker.
+- Some vehicles **prioritize Bluetooth calls over app-based audio**, disrupting the inspection.
+- **Audio streams are interrupted when devices switch connections**.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## Resolution
+1. **Call the customer** and inform them of the issue.
+2. **Ask them to turn off Bluetooth**:
+    - **iPhone:** `Settings → Bluetooth → Toggle Off`
+    - **Android:** `Quick Settings Panel → Tap Bluetooth Off`
+3. **Have the customer refresh the stream**:
+    - Close and reopen the inspection app.
+    - Ensure **mobile data/Wi-Fi is stable**.
+4. **Verify the audio connection** before continuing the inspection.
 
-### What you'll need
+## 🖥️ Interactive Flowchart (Mermaid.js)
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+```mermaid
+graph TD;
+    A[Customer starts car] -->|Bluetooth connects to vehicle| B[Audio stream lost];
+    B --> C[Inspector calls customer];
+    C --> D[Customer turns off Bluetooth];
+    D --> E[Customer refreshes stream];
+    E --> F[Audio connection restored];
