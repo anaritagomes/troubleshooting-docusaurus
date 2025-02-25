@@ -30,12 +30,6 @@ During an **online remote inspection**, the **audio stream connection is lost** 
     - Ensure **mobile data/Wi-Fi is stable**.
 4. **Verify the audio connection** before continuing the inspection.
 
-## 🖥️ Interactive Flowchart (Mermaid.js)
+## Flowchart
 
-```mermaid
-graph TD;
-    A[Customer starts car] -->|Bluetooth connects to vehicle| B[Audio stream lost];
-    B --> C[Inspector calls customer];
-    C --> D[Customer turns off Bluetooth];
-    D --> E[Customer refreshes stream];
-    E --> F[Audio connection restored];
+![Troubleshooting Flowchart](../static/img/diagram_clean.svg)
